@@ -2,18 +2,14 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\BiodataController;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/biodatas', [BiodataController::class, 'index']);
+Route::post('/add-biodata', [BiodataController::class, 'store']);
+Route::get('/edit-biodata/{uuid}', [BiodataController::class, 'edit']);
+Route::put('/update-biodata/{uuid}', [BiodataController::class, 'update']);
+Route::delete('/delete-biodata/{uuid}', [BiodataController::class, 'destroy']);
