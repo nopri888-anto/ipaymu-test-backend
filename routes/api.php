@@ -13,3 +13,5 @@ Route::post('/add-biodata', [BiodataController::class, 'store']);
 Route::get('/edit-biodata/{uuid}', [BiodataController::class, 'edit']);
 Route::put('/update-biodata/{uuid}', [BiodataController::class, 'update']);
 Route::delete('/delete-biodata/{uuid}', [BiodataController::class, 'destroy']);
+
+//noprianto
